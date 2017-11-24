@@ -1,7 +1,7 @@
 <template>
   <main>
     <app-masthead />
-    <app-sidebar />
+    <!-- <app-sidebar /> -->
     <section class="container">
       <app-item 
         v-for="(item, index) in products"

@@ -17,7 +17,8 @@
       <li>Men's</li>
       <li>Children</li>
       <li>Sale</li>
-      <li>
+      <li class="cartitem">
+        <div v-if="cart.length" class="cartcount">{{ cart.length }}</div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="30" height="30">
           <title id="cart">
             Shopping Cart
@@ -30,7 +31,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -49,5 +56,22 @@ ul {
 
 li {
   padding: 0 50px;
+}
+
+.cartitem {
+  position: relative;
+}
+
+.cartcount {
+  position: absolute;
+  background: #ff2211;
+  color: white;
+  text-align: center;
+  padding-top: 4px;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  margin: -5px 0 0 20px;
+  border-radius: 1000px;
 }
 </style>
