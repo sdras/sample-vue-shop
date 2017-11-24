@@ -1,11 +1,13 @@
 <template>
   <main>
+    <app-masthead />
+    <app-sidebar />
     <section class="container">
-      <app-sidebar />
       <app-item 
-        v-for="item in products"
+        v-for="(item, index) in products"
         key="item"
         :item="item"
+        :index="index"
       />
     </section>
   </main>
@@ -13,11 +15,13 @@
 
 <script>
 import AppSidebar from './../components/AppSidebar.vue';
+import AppMasthead from './../components/AppMasthead.vue';
 import AppItem from './../components/AppItem.vue';
 
 export default {
   components: {
     AppSidebar,
+    AppMasthead,
     AppItem
   },
   computed: {
@@ -33,6 +37,7 @@ main {
   min-height: 100vh;
   max-width: 1200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
@@ -41,6 +46,7 @@ main {
   display: grid;
   grid-template-columns: 250px 250px 250px;
   grid-gap: 10px;
+  margin: 0 auto;
 }
 
 .item {

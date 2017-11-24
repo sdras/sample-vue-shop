@@ -77,10 +77,15 @@ button::-moz-focus-inner {
 
 button {
   padding: 10px 30px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   border-radius: 1000px;
   cursor: pointer;
+  background: #ff2211;
+  color: white;
+  font-family: 'Barlow', sans-serif;
+  text-transform: uppercase;
+  margin: 10px;
 }
 
 *,

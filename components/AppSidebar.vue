@@ -12,7 +12,7 @@ export default {};
 aside {
   background: white;
   height: 90vh;
-  grid-column: 1;
-  grid-row: 1 / 3;
+  width: 250px;
+  float: left;
 }
 </style>

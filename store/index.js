@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      cart: [],
       products: [
         {
           name: 'Khaki Suede Polish Work Boots',
@@ -85,6 +86,11 @@ const createStore = () => {
           img: 'jacket4.png'
         }
       ]
+    },
+    mutations: {
+      addItem: (state, item) => {
+        state.cart.push(item);
+      }
     }
   });
 };

@@ -1,8 +1,9 @@
 <template>
   <div class="item">
     <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
-    <h4>{{ item.name }}</h4>
-    <p>{{ item.price | usdollar }}</p>
+    <p>{{ item.name }}</p>
+    <h4>{{ item.price | usdollar }}</h4>
+    <button class="add" @click="addItem">Add Item</button>
   </div>
 </template>
 
@@ -11,18 +12,26 @@ export default {
   props: {
     item: {
       type: Object
+    },
+    index: {
+      type: Number
     }
   },
   filters: {
     usdollar: function(value) {
       return `$${value}`;
     }
+  },
+  methods: {
+    addItem() {
+      this.$store.commit('addItem', this.item);
+    }
   }
 };
 </script>
 
 <style scoped>
-.item {
-  background: white;
+p {
+  font-size: 18px;
 }
 </style>
