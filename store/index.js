@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      cartTotal: 0,
       cart: {},
       products: [
         {
@@ -89,6 +90,7 @@ const createStore = () => {
     },
     mutations: {
       addItem: (state, item) => {
+        state.cartTotal++;
         if (item.name in state.cart) {
           state.cart[item.name].count++;
         } else {

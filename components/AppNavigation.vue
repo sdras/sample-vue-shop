@@ -19,7 +19,7 @@
       <li>Sale</li>
       <nuxt-link to="/cart">
         <li class="cartitem">
-          <div v-if="cart.length" class="cartcount">{{ cart.length }}</div>
+          <div v-if="cartTotal > 0" class="cartcount">{{ cartTotal }}</div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-labelledby="shopicon" role="presentation" width="30" height="30">
             <title id="cart">
               Shopping Cart
@@ -35,8 +35,8 @@
 <script>
 export default {
   computed: {
-    cart() {
-      return this.$store.state.cart;
+    cartTotal() {
+      return this.$store.state.cartTotal;
     }
   }
 };
