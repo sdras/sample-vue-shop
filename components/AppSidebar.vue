@@ -12,7 +12,6 @@ export default {};
 aside {
   background: white;
   height: 90vh;
-  width: 250px;
   float: left;
 }
 </style>

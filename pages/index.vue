@@ -1,15 +1,17 @@
 <template>
-  <main>
+  <main class="capsule">
     <app-masthead />
-    <!-- <app-sidebar /> -->
-    <section class="container">
-      <app-item 
-        v-for="(item, index) in products"
-        key="item"
-        :item="item"
-        :index="index"
-      />
-    </section>
+    <div class="contain">
+      <app-sidebar />
+      <section class="content">
+        <app-item 
+          v-for="(item, index) in products"
+          key="item"
+          :item="item"
+          :index="index"
+        />
+      </section>
+    </div>
   </main>
 </template>
 
@@ -33,26 +35,28 @@ export default {
 </script>
 
 <style>
-main {
-  min-height: 100vh;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+/* no grid support */
+aside {
+  float: left;
+  width: 19.1489%;
 }
 
-.container {
+.content {
+  /*no grid support*/
+  float: right;
+  width: 79.7872%;
+  /* grid */
   display: grid;
-  grid-template-columns: 250px 250px 250px;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  margin: 0 auto;
+  padding: 0 !important;
 }
 
-.item {
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
-  background: white;
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .capsule > * {
+    width: auto;
+    margin: 0;
+  }
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="item">
-    <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
     <p>{{ item.name }}</p>
-    <h4>{{ item.price | usdollar }}</h4>
+    <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
+    <p>{{ item.price | usdollar }}</p>
     <button class="add" @click="addItem">Add Item</button>
   </div>
 </template>
@@ -11,10 +11,12 @@
 export default {
   props: {
     item: {
-      type: Object
+      type: Object,
+      required: true
     },
     index: {
-      type: Number
+      type: Number,
+      required: true
     }
   },
   filters: {
@@ -31,6 +33,12 @@ export default {
 </script>
 
 <style scoped>
+.item {
+  border-radius: 5px;
+  padding: 20px;
+  background: white;
+}
+
 p {
   font-size: 18px;
 }
