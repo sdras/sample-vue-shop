@@ -1,12 +1,14 @@
 <template>
-  <section class="container">
-    <app-sidebar />
-    <app-item 
-      v-for="item in products"
-      key="item"
-      :item="item"
-    />
-  </section>
+  <main>
+    <section class="container">
+      <app-sidebar />
+      <app-item 
+        v-for="item in products"
+        key="item"
+        :item="item"
+      />
+    </section>
+  </main>
 </template>
 
 <script>
@@ -27,33 +29,24 @@ export default {
 </script>
 
 <style>
-.container {
+main {
   min-height: 100vh;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.container {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-gap: 10px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.item {
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  background: white;
 }
 </style>

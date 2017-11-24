@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="item">
     <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
     <h4>{{ item.name }}</h4>
     <p>{{ item.price | usdollar }}</p>
@@ -22,5 +22,7 @@ export default {
 </script>
 
 <style scoped>
-
+.item {
+  background: white;
+}
 </style>
