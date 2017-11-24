@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      cart: [],
+      cart: {},
       products: [
         {
           name: 'Khaki Suede Polish Work Boots',
@@ -89,7 +89,13 @@ const createStore = () => {
     },
     mutations: {
       addItem: (state, item) => {
-        state.cart.push(item);
+        if (item.name in state.cart) {
+          state.cart[item.name].count++;
+        } else {
+          let stateItem = Object.assign({}, item);
+          stateItem.count = 1;
+          state.cart[item.name] = stateItem;
+        }
       }
     }
   });

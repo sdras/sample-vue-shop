@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _2fd71ff0 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _f587b74c = () => import('../pages/cart.vue' /* webpackChunkName: "pages/cart" */).then(m => m.default || m)
 
 
 
@@ -43,6 +44,11 @@ export function createRouter () {
 			path: "/",
 			component: _2fd71ff0,
 			name: "index"
+		},
+		{
+			path: "/cart",
+			component: _f587b74c,
+			name: "cart"
 		}
     ],
     fallback: false
