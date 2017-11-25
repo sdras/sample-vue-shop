@@ -63,11 +63,19 @@ button {
   font-weight: 600;
   border-radius: 1000px;
   cursor: pointer;
-  background: #ff2211;
-  color: white;
+  background: white;
+  color: #3e64ea;
+  border: 1px solid #3e64ea;
   font-family: 'Barlow', sans-serif;
   text-transform: uppercase;
   margin: 10px;
+  transition: 0.15s all ease-out;
+}
+
+button:hover {
+  background: #3e64ea;
+  color: white;
+  transition: 0.2s all ease-in;
 }
 
 *,
@@ -81,4 +89,30 @@ button {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+/* items layout */
+
+/* no grid support */
+aside {
+  float: left;
+  width: 19.1489%;
+}
+
+.content {
+  /*no grid support*/
+  float: right;
+  width: 79.7872%;
+  /* grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 0 !important;
+}
+
+@supports (display: grid) {
+  .capsule > * {
+    width: auto;
+    margin: 0;
+  }
 }

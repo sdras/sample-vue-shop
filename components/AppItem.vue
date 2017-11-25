@@ -37,6 +37,10 @@ export default {
   border-radius: 5px;
   padding: 20px;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 p {

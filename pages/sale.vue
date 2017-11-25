@@ -1,6 +1,8 @@
 <template>
   <main class="capsule">
-    <app-masthead/>
+    <div class="saleimg">
+      <app-masthead img="bk-sale" title="Sale" bkcolor="#1ba079"/>
+    </div>
     <div class="contain">
       <app-sidebar />
       <section class="content">
@@ -35,27 +37,7 @@ export default {
 </script>
 
 <style>
-/* no grid support */
-aside {
-  float: left;
-  width: 19.1489%;
-}
-
-.content {
-  /*no grid support*/
-  float: right;
-  width: 79.7872%;
-  /* grid */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 0 !important;
-}
-
-@supports (display: grid) {
-  .capsule > * {
-    width: auto;
-    margin: 0;
-  }
+.saleimg .ppl-banner {
+  height: 105%;
 }
 </style>

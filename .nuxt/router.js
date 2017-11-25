@@ -4,7 +4,10 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _2fd71ff0 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _473ed934 = () => import('../pages/women.vue' /* webpackChunkName: "pages/women" */).then(m => m.default || m)
+const _7edf9a8c = () => import('../pages/men.vue' /* webpackChunkName: "pages/men" */).then(m => m.default || m)
 const _f587b74c = () => import('../pages/cart.vue' /* webpackChunkName: "pages/cart" */).then(m => m.default || m)
+const _0f8303fe = () => import('../pages/sale.vue' /* webpackChunkName: "pages/sale" */).then(m => m.default || m)
 
 
 
@@ -46,9 +49,24 @@ export function createRouter () {
 			name: "index"
 		},
 		{
+			path: "/women",
+			component: _473ed934,
+			name: "women"
+		},
+		{
+			path: "/men",
+			component: _7edf9a8c,
+			name: "men"
+		},
+		{
 			path: "/cart",
 			component: _f587b74c,
 			name: "cart"
+		},
+		{
+			path: "/sale",
+			component: _0f8303fe,
+			name: "sale"
 		}
     ],
     fallback: false

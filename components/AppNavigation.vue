@@ -13,9 +13,9 @@
         </svg>
       </nuxt-link>
       <ul>
-        <li>Women's</li>
-        <li>Men's</li>
-        <li>Sale</li>
+        <nuxt-link to="/women"><li>Women's</li></nuxt-link>
+        <nuxt-link to="/men"><li>Men's</li></nuxt-link>
+        <nuxt-link to="/sale"><li>Sale</li></nuxt-link>
       </ul>
       <nuxt-link to="/cart">
         <div class="cartitem">
@@ -45,7 +45,7 @@ export default {
 <style scoped>
 .capsule {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -65,6 +65,13 @@ ul {
 
 li {
   padding: 0 50px;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: black;
 }
 
 .cartitem {

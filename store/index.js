@@ -85,6 +85,22 @@ const createStore = () => {
           sale: false,
           article: 'jacket',
           img: 'jacket4.png'
+        },
+        {
+          name: 'Spotted Patterned Sweater',
+          price: 80.99,
+          category: 'women',
+          sale: false,
+          article: 'jacket',
+          img: 'sweater4.png'
+        },
+        {
+          name: 'Double Knit Sweater',
+          price: 59.99,
+          category: 'men',
+          sale: true,
+          article: 'jacket',
+          img: 'sweater5.png'
         }
       ]
     },
