@@ -14,8 +14,6 @@ import '../assets/main.css'
 
 let layouts = {
 
-  "_cart": () => import('../layouts/cart.vue'  /* webpackChunkName: "layouts/cart" */).then(m => m.default || m),
-
   "_default": () => import('../layouts/default.vue'  /* webpackChunkName: "layouts/default" */).then(m => m.default || m)
 
 }

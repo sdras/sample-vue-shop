@@ -1,11 +1,17 @@
 <template>
   <aside>
-    <p>thing!</p>
+    <app-multiselect />
   </aside>
 </template>
 
 <script>
-export default {};
+import AppMultiselect from './AppMultiselect.vue';
+
+export default {
+  components: {
+    AppMultiselect
+  }
+};
 </script>
 
 <style scoped>
