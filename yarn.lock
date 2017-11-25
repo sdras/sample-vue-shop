@@ -5750,19 +5750,9 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-vue@^2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.8.tgz#f855c1c27255184a82225f4bef225473e8faf15b"
-
 vue@~2.4.2:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.4.tgz#ea9550b96a71465fd2b8b17b61673b3561861789"
-
-vuestorage@^17.11.21:
-  version "17.11.21"
-  resolved "https://registry.yarnpkg.com/vuestorage/-/vuestorage-17.11.21.tgz#4f2774b58eca29a522844fca7414f035b531548b"
-  dependencies:
-    vue "^2.5.8"
 
 vuex@^2.4.0:
   version "2.5.0"
