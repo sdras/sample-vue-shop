@@ -5,9 +5,10 @@ Vue.use(Router)
 
 const _2fd71ff0 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 const _473ed934 = () => import('../pages/women.vue' /* webpackChunkName: "pages/women" */).then(m => m.default || m)
-const _7edf9a8c = () => import('../pages/men.vue' /* webpackChunkName: "pages/men" */).then(m => m.default || m)
-const _f587b74c = () => import('../pages/cart.vue' /* webpackChunkName: "pages/cart" */).then(m => m.default || m)
 const _0f8303fe = () => import('../pages/sale.vue' /* webpackChunkName: "pages/sale" */).then(m => m.default || m)
+const _f587b74c = () => import('../pages/cart.vue' /* webpackChunkName: "pages/cart" */).then(m => m.default || m)
+const _7edf9a8c = () => import('../pages/men.vue' /* webpackChunkName: "pages/men" */).then(m => m.default || m)
+const _4ffed18e = () => import('../pages/success.vue' /* webpackChunkName: "pages/success" */).then(m => m.default || m)
 
 
 
@@ -54,9 +55,9 @@ export function createRouter () {
 			name: "women"
 		},
 		{
-			path: "/men",
-			component: _7edf9a8c,
-			name: "men"
+			path: "/sale",
+			component: _0f8303fe,
+			name: "sale"
 		},
 		{
 			path: "/cart",
@@ -64,9 +65,14 @@ export function createRouter () {
 			name: "cart"
 		},
 		{
-			path: "/sale",
-			component: _0f8303fe,
-			name: "sale"
+			path: "/men",
+			component: _7edf9a8c,
+			name: "men"
+		},
+		{
+			path: "/success",
+			component: _4ffed18e,
+			name: "success"
 		}
     ],
     fallback: false

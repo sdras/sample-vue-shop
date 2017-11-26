@@ -12,12 +12,17 @@
     <div class="total">
       <h3>Total: </h3>
     </div>
-    <button>Checkout Now</button>
+    <app-checkout></app-checkout>
   </div>
 </template>
 
 <script>
+import AppCheckout from './../components/AppCheckout.vue';
+
 export default {
+  components: {
+    AppCheckout
+  },
   computed: {
     cart() {
       return this.$store.state.cart;
