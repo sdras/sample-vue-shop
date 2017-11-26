@@ -1,19 +1,18 @@
 <template>
   <aside>
     <app-range />
-    <div class="sidearea">
-      <h4>Show Sale</h4>
-      
-    </div>
+    <app-switch />
   </aside>
 </template>
 
 <script>
 import AppRange from './AppRange.vue';
+import AppSwitch from './AppSwitch.vue'
 
 export default {
   components: {
-    AppRange
+    AppRange,
+    AppSwitch
   }
 };
 </script>

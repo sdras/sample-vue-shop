@@ -10,7 +10,7 @@ const createStore = () => {
           name: 'Khaki Suede Polish Work Boots',
           price: 149.99,
           category: 'women',
-          sale: false,
+          sale: true,
           article: 'shoe',
           img: 'shoe1.png'
         },
@@ -66,7 +66,7 @@ const createStore = () => {
           name: 'Cotton Band-collar Blouse',
           price: 49.99,
           category: 'men',
-          sale: true,
+          sale: false,
           article: 'shirt',
           img: 'shirt2.png'
         },
@@ -74,7 +74,7 @@ const createStore = () => {
           name: 'Camo Fang Backpack Jungle',
           price: 59.99,
           category: 'women',
-          sale: false,
+          sale: true,
           article: 'jacket',
           img: 'jacket3.png'
         },

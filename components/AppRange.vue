@@ -20,6 +20,10 @@ data() {
 </script>
 
 <style scoped lang="scss">
+.sidearea {
+  padding-bottom: 50px;
+}
+
 label {
   font-family: 'Playfair Display', serif;
   padding: 15px 0;
