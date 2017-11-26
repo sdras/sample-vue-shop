@@ -20,14 +20,12 @@ export default {
 <style scoped>
 aside {
   background: white;
-  height: 90vh;
   float: left;
   padding: 20px;
 }
 
 .sidearea {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 50px;
 }
 
 label {
