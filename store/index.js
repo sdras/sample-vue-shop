@@ -138,6 +138,12 @@ const createStore = () => {
       }
     },
     mutations: {
+      clearCartCount: state => {
+        state.cartTotal = 0;
+      },
+      clearCartContents: state => {
+        state.cart = {};
+      },
       addItem: (state, item) => {
         state.cartTotal++;
         if (item.name in state.cart) {

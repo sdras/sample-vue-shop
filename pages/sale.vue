@@ -4,7 +4,7 @@
       <app-masthead img="bk-sale" title="Sale" bkcolor="#1ba079"/>
     </div>
     <div class="contain">
-      <app-sidebar />
+      <app-sidebar sale="true"/>
       <section class="content">
         <app-item 
           v-for="(item, index) in sProducts"

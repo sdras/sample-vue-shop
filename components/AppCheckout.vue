@@ -13,11 +13,12 @@
         @change='complete = $event.complete'
       />
       <p>Testing credit card number: 4242 4242 4242 4242</p>
-      <button class='pay-with-stripe' @click='pay' :disabled='!complete || !email'>Pay with credit card</button>
+      <button class='pay-with-stripe' @click='pay' :disabled='!complete || !stripeEmail'>Pay with credit card</button>
     </div>
     <div v-else>
       <div v-if="status === 'success'">
-        success!
+        <h2>Success!</h2>
+        <p>Your order has been processed, it will be delivered shortly.</p>
       </div>
       <div v-else-if="status === 'failure'">
         <h3>Oh No!</h3>
@@ -77,6 +78,7 @@ export default {
           )
           .then(response => {
             this.status = 'success';
+            //this.$store.commit('clearCartCount');
             this.response = JSON.stringify(response, null, 2);
             console.log(this.response);
           })
@@ -118,5 +120,13 @@ p {
 label {
   color: black;
   margin-top: 15px;
+}
+button[disabled] {
+  color: #CCC;
+  border-color: #CCC;
+  &:hover {
+    background: white;
+    color: #CCC;
+  }
 }
 </style>
