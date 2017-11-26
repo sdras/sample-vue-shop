@@ -25,6 +25,7 @@ h4 {
   margin: 20px 0;
 }
 
+/* modified from Accessbile Toggle Switch by Chris Hart: https://codepen.io/personable/full/stpwD */
 @mixin can-toggle-branding(
   $can-toggle-off-color: #777, 
   $can-toggle-on-color: #5fc054,

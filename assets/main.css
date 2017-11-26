@@ -10,6 +10,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  font-family: 'Barlow', Helvetica, Arial, sans-serif;
 }
 
 #app {
@@ -115,4 +116,21 @@ aside {
     width: auto;
     margin: 0;
   }
+}
+
+input[type='email'] {
+  line-height: 24px;
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  height: 24px;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+input::placeholder,
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input:-moz-placeholder {
+  color: #aab8c3;
 }

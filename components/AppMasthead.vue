@@ -43,7 +43,7 @@ h1 {
   position: relative;
   z-index: 100;
   font-size: 60px;
-  padding: 8px 130px;
+  padding: 8px 80px;
 }
 
 .bk {
