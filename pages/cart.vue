@@ -11,7 +11,7 @@
         <img class="cartimg" :src="`/${item.img}`" :alt="`Image of ${item.name}`">
       </div>
       <div class="total">
-        <h3>Total: </h3>
+        <h3>Total: {{ total }}</h3>
       </div>
       <app-checkout :total="total"></app-checkout>
     </div>
@@ -30,23 +30,29 @@ export default {
   components: {
     AppCheckout
   },
-  data() {
-    return {
-      total: ''
-    }
-  },
   computed: {
     cart() {
       return this.$store.state.cart;
     },
     cartTotal() {
       return this.$store.state.cartTotal;
+    },
+    total() {
+      let arr = [];
+      Object.values(this.cart).forEach(el => {
+        arr.push(el.count * el.price)
+      })
+      const result = arr.reduce((a, b) => a + b)
+      return result.toFixed(2)
     }
   },
   filters: {
     usdollar: function(value) {
       return `$${value}`;
     }
+  },
+  mounted() {
+    console.log(this.cart)
   }
 };
 </script>

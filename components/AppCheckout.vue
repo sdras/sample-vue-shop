@@ -1,9 +1,11 @@
 <template>
-  <div id='app'>
-    <h1>Please give us your payment details:</h1>
+  <div class="payment">
+    <h3>Please enter your payment details:</h3>
     <label for="email">Email</label>
-    <input id="email" type="text" v-model="stripeEmail" /><br>
+    <input id="email" type="email" v-model="stripeEmail" placeholder="name@example.com" />
+    <label for="card">Credit Card</label>
     <card class='stripe-card'
+      id="card"
       :class='{ complete }'
       stripe='pk_test_5ThYi0UvX3xwoNdgxxxTxxrG'
       :options='stripeOptions'
@@ -67,14 +69,22 @@ export default {
 </script>
 
 <style scoped>
-.stripe-card {
-  width: 300px;
-  border: 1px solid grey;
+.payment {
+  border: 1px solid #ccc;
+  color: black;
+  width: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  justify-content: space-between;
+  text-align: center;
 }
-.stripe-card.complete {
-  border-color: green;
+.stripe-card {
+  border: 1px solid #ccc;
 }
 label {
   color: black;
+  margin-top: 15px;
 }
 </style>
