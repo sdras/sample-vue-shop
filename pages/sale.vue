@@ -7,7 +7,7 @@
       <app-sidebar />
       <section class="content">
         <app-item 
-          v-for="(item, index) in products"
+          v-for="(item, index) in sProducts"
           key="item"
           :item="item"
           :index="index"
@@ -29,8 +29,8 @@ export default {
     AppItem
   },
   computed: {
-    products() {
-      return this.$store.state.products;
+    sProducts() {
+      return this.$store.getters.sale;
     }
   }
 };

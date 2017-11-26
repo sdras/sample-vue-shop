@@ -104,6 +104,39 @@ const createStore = () => {
         }
       ]
     },
+    getters: {
+      women: state => {
+        const wTemp = [];
+        state.products.forEach(el => {
+          Object.keys(el).forEach(key => {
+            if (el[key] == 'women') {
+              wTemp.push(el);
+            }
+          });
+        });
+        return wTemp;
+      },
+      men: state => {
+        const mTemp = [];
+        state.products.forEach(el => {
+          Object.keys(el).forEach(key => {
+            if (el[key] == 'men') {
+              mTemp.push(el);
+            }
+          });
+        });
+        return mTemp;
+      },
+      sale: state => {
+        const sTemp = [];
+        state.products.forEach(el => {
+          if (el['sale'] === true) {
+            sTemp.push(el);
+          }
+        });
+        return sTemp;
+      }
+    },
     mutations: {
       addItem: (state, item) => {
         state.cartTotal++;
