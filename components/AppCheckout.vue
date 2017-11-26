@@ -30,7 +30,7 @@ export default {
       stripeOptions: {
         // see https://stripe.com/docs/stripe.js#element-options for details
       },
-      stripeEmail: 'nobody@example.com'
+      stripeEmail: ''
     };
   },
   components: { Card },
@@ -44,7 +44,7 @@ export default {
             {
               stripeEmail: this.stripeEmail,
               stripeToken: 'tok_visa',
-              stripeAmt: '50.00'
+              stripeAmt: this.total
             },
             {
               headers: {

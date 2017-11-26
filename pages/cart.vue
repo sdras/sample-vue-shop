@@ -1,18 +1,25 @@
 <template>
-  <div class="cart capsule">
-    <h1>Cart</h1>
-    <div class="cartitems" v-for="item in cart">
-      <div class="carttext">
-        <h4>{{ item.name }}</h4>
-        <p>{{ item.price | usdollar }} x {{ item.count }}</p>
-        <p>Total for this item: <strong>{{ item.price * item.count }}</strong></p>
+  <div class="capsule">
+    <div v-if="cartTotal > 0" class="cart">
+      <h1>Cart</h1>
+      <div class="cartitems" v-for="item in cart">
+        <div class="carttext">
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.price | usdollar }} x {{ item.count }}</p>
+          <p>Total for this item: <strong>{{ item.price * item.count }}</strong></p>
+        </div>
+        <img class="cartimg" :src="`/${item.img}`" :alt="`Image of ${item.name}`">
       </div>
-      <img class="cartimg" :src="`/${item.img}`" :alt="`Image of ${item.name}`">
+      <div class="total">
+        <h3>Total: </h3>
+      </div>
+      <app-checkout :total="total"></app-checkout>
     </div>
-    <div class="total">
-      <h3>Total: </h3>
+    <div v-else class="cart empty">
+      <h1>Cart</h1>
+      <h3>Your cart is empty.</h3>
+      <nuxt-link exact to="/"><button>Fill er up!</button></nuxt-link>
     </div>
-    <app-checkout></app-checkout>
   </div>
 </template>
 
@@ -23,9 +30,17 @@ export default {
   components: {
     AppCheckout
   },
+  data() {
+    return {
+      total: ''
+    }
+  },
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+    cartTotal() {
+      return this.$store.state.cartTotal;
     }
   },
   filters: {
@@ -47,6 +62,11 @@ export default {
   background: white;
   border-radius: 3px;
   margin-top: 10px;
+  padding-bottom: 80px;
+}
+
+.cart.empty h1, .cart.empty h3 {
+  margin-bottom: 15px;
 }
 
 .cartitems {
