@@ -52,6 +52,10 @@ export default {
     total: {
       type: [Number, String],
       default: '50.00'
+    },
+    success: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -88,6 +92,7 @@ export default {
           )
           .then(response => {
             this.status = 'success';
+            this.$emit('successSubmit');
             //this.$store.commit('clearCartCount');
             this.response = JSON.stringify(response, null, 2);
             console.log(this.response);

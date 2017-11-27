@@ -13,7 +13,7 @@
       <div class="total">
         <h3>Total: {{ total }}</h3>
       </div>
-      <app-checkout :total="total"></app-checkout>
+      <app-checkout :total="total" @successSubmit="success = true"></app-checkout>
     </div>
     <div v-else class="cart empty">
       <h1>Cart</h1>
@@ -27,6 +27,11 @@
 import AppCheckout from './../components/AppCheckout.vue';
 
 export default {
+  data() {
+    return {
+      success: false
+    };
+  },
   components: {
     AppCheckout
   },
@@ -40,10 +45,10 @@ export default {
     total() {
       let arr = [];
       Object.values(this.cart).forEach(el => {
-        arr.push(el.count * el.price)
-      })
-      const result = arr.reduce((a, b) => a + b)
-      return result.toFixed(2)
+        arr.push(el.count * el.price);
+      });
+      const result = arr.reduce((a, b) => a + b);
+      return result.toFixed(2);
     }
   },
   filters: {
@@ -52,7 +57,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.cart)
+    console.log(this.cart);
   }
 };
 </script>
@@ -71,7 +76,8 @@ export default {
   padding-bottom: 80px;
 }
 
-.cart.empty h1, .cart.empty h3 {
+.cart.empty h1,
+.cart.empty h3 {
   margin-bottom: 15px;
 }
 
