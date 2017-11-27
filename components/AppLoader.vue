@@ -645,9 +645,6 @@ export default {
     master.add(gift(), 'gift');
     master.add(bag(), 'bag');
     master.add(cart(), 'cart');
-
-    //master.timeScale(0.3)
-    //master.seek('cart')
   }
 };
 </script>

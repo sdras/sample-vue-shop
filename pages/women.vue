@@ -2,15 +2,15 @@
   <main class="capsule">
     <app-masthead img="banner-ppl-women" title="Women's" bkcolor="#e82319"/>
     <div class="contain">
-      <app-sidebar />
-      <section class="content">
+      <app-sidebar :pricerange="highprice" @pricecap="highprice = $event"/>
+      <transition-group name="items" tag="section" class="content">
         <app-item 
           v-for="(item, index) in wProducts"
           key="item"
           :item="item"
           :index="index"
         />
-      </section>
+      </transition-group>
     </div>
   </main>
 </template>
@@ -26,9 +26,20 @@ export default {
     AppMasthead,
     AppItem
   },
+  data() {
+    return {
+      highprice: 300
+    };
+  },
   computed: {
     wProducts() {
-      return this.$store.getters.women;
+      let temp = [];
+      this.$store.getters.women.forEach(el => {
+        if (el.price < this.highprice) {
+          temp.push(el);
+        }
+      });
+      return temp;
     }
   }
 };

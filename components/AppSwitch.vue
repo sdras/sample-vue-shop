@@ -2,7 +2,7 @@
   <div class="sidearea">
     <h4>Only Show Sale Items</h4>
     <div class="can-toggle demo-rebrand-2">
-      <input id="e" type="checkbox" v-model="checked">
+      <input id="e" type="checkbox" v-model="trigger" @change="updateSale">
       <label for="e">
         <div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
       </label>
@@ -11,13 +11,23 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        checked: false
-      }
-    },
+export default {
+  data() {
+    return {
+      trigger: this.checked
+    };
+  },
+  computed: {
+    checked() {
+      return this.$store.state.sale;
+    }
+  },
+  methods: {
+    updateSale() {
+      this.$store.commit('switchSale');
+    }
   }
+};
 </script>
 
 <style scoped lang="scss">
@@ -32,7 +42,7 @@ h4 {
   $can-toggle-inactive-text: rgba(white, 0.5),
   $can-toggle-transition: cubic-bezier(0,1,0.5,1)
 ) {
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     &[disabled] ~ label {
       color: rgba($can-toggle-off-color, 0.5);
     }
@@ -105,7 +115,7 @@ h4 {
   $can-toggle-shadow: 0 3px 3px rgba(black, 0.2)) {
   $can-toggle-switch-width: $can-toggle-width/2;
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     &:focus ~ label,
     &:hover ~ label {
       .can-toggle__switch {
@@ -183,7 +193,7 @@ h4 {
   }
   //overflow: hidden;
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -255,7 +265,7 @@ h4 {
   &.demo-rebrand-2 {
     cursor: pointer;
     @include can-toggle-branding (#888, 
-    #3e64ea,
+ #3e64ea,
  rgba(white, 0.7), 
  ease);
     @include can-toggle-appearance (60px, 
@@ -271,5 +281,4 @@ h4 {
 .sidearea {
   padding-bottom: 30px;
 }
-
 </style>
