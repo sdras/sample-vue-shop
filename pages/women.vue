@@ -35,8 +35,14 @@ export default {
     wProducts() {
       let temp = [];
       this.$store.getters.women.forEach(el => {
-        if (el.price < this.highprice) {
-          temp.push(el);
+        if (this.$store.state.sale) {
+          if (el.price < this.highprice && el.sale) {
+            temp.push(el);
+          }
+        } else {
+          if (el.price < this.highprice) {
+            temp.push(el);
+          }
         }
       });
       return temp;
