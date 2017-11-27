@@ -134,3 +134,24 @@ input:-ms-input-placeholder,
 input:-moz-placeholder {
   color: #aab8c3;
 }
+
+/* --- items --- */
+
+.items-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.items-move {
+  transition: all 0.2s ease-in-out;
+}
+
+.items-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.items-enter,
+.items-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+  transform-origin: 50% 50%;
+}

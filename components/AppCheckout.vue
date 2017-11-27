@@ -25,8 +25,9 @@
         <p>Something went wrong!</p>
         <button @click="clearCart">Please try again</button>
       </div>
-      <div v-else>
-        loading...
+      <div v-else class="loadcontain">
+        <h4>Please hold, we're filling up your cart with goodies</h4>
+        <app-loader />
       </div>
     </div>
   </div>
@@ -34,9 +35,14 @@
 
 <script>
 import { Card, createToken } from 'vue-stripe-elements-plus';
+import AppLoader from './AppLoader.vue';
 import axios from 'axios';
 
 export default {
+  components: {
+    Card,
+    AppLoader
+  },
   props: {
     total: {
       type: [Number, String],
@@ -56,7 +62,6 @@ export default {
       stripeEmail: ''
     };
   },
-  components: { Card },
   methods: {
     pay() {
       createToken().then(data => {
@@ -122,11 +127,14 @@ label {
   margin-top: 15px;
 }
 button[disabled] {
-  color: #CCC;
-  border-color: #CCC;
+  color: #ccc;
+  border-color: #ccc;
   &:hover {
     background: white;
-    color: #CCC;
+    color: #ccc;
   }
+}
+.loadcontain {
+  text-align: center;
 }
 </style>
