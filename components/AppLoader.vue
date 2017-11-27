@@ -666,6 +666,6 @@ svg {
 .loadingsvg {
   width: 450px;
   margin: -30px auto;
-  padding: 0 75px;
+  padding: 0 65px;
 }
 </style>
