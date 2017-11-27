@@ -1,6 +1,11 @@
 <template>
   <aside>
-    <app-range />
+    <div class="sidearea">
+      <label for="pricerange">Highest Price: <span>${{ price }}</span></label>
+      <input class="slider" id="pricerange" v-model="price" type="range" :min="min" :max="max" step="0.1">
+      <span class="min">${{ min }}</span>
+      <span class="max">${{ max }}</span>
+    </div>
     <app-switch v-if="!sale" />
     <div class="sidearea callout">
       <h4>Special Sale!</h4>
@@ -14,8 +19,7 @@
 </template>
 
 <script>
-import AppRange from './AppRange.vue';
-import AppSwitch from './AppSwitch.vue'
+import AppSwitch from './AppSwitch.vue';
 
 export default {
   props: {
@@ -23,9 +27,27 @@ export default {
       type: Boolean,
       default: false
     },
+    pricerange: {
+      type: [Number, String],
+      default: 300
+    }
+  },
+  data() {
+    return {
+      price: 300,
+      min: 0,
+      max: 400
+    };
+  },
+  watch: {
+    price() {
+      this.pricerange = this.price;
+    },
+    pricerange() {
+      this.$emit('pricecap', this.price);
+    }
   },
   components: {
-    AppRange,
     AppSwitch
   }
 };
@@ -56,5 +78,32 @@ label {
   font-family: 'Playfair Display', serif;
   padding: 15px 0;
   text-align: center;
+}
+
+/*--input range--*/
+.sidearea:first-of-type {
+  padding-bottom: 40px;
+}
+
+label {
+  font-family: 'Playfair Display', serif;
+  padding: 15px 0;
+  text-align: center;
+}
+
+span {
+  font-family: 'Barlow', sans-serif;
+}
+
+.max {
+  font-size: 12px;
+  float: right;
+  color: #565656;
+}
+
+.min {
+  float: left;
+  font-size: 12px;
+  color: #565656;
 }
 </style>

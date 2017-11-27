@@ -5,6 +5,7 @@ const createStore = () => {
     state: {
       cartTotal: 0,
       cart: {},
+      sale: false,
       products: [
         {
           name: 'Khaki Suede Polish Work Boots',
@@ -138,6 +139,9 @@ const createStore = () => {
       }
     },
     mutations: {
+      switchSale: state => {
+        state.sale = !state.sale;
+      },
       clearCartCount: state => {
         state.cartTotal = 0;
       },
