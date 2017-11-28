@@ -4,7 +4,7 @@
       <app-masthead img="bk-sale" title="Sale" bkcolor="#1ba079"/>
     </div>
     <div class="contain">
-      <app-sidebar :pricerange="highprice" @pricecap="highprice = $event" sale="true"/>
+      <app-sidebar :pricerange.sync="highprice" :sale="true"/>
       <transition-group name="items" tag="section" class="content">
         <app-item 
           v-for="(item, index) in sProducts"

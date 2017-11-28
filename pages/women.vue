@@ -2,7 +2,7 @@
   <main class="capsule">
     <app-masthead img="banner-ppl-women" title="Women's" bkcolor="#e82319"/>
     <div class="contain">
-      <app-sidebar :pricerange="highprice" @pricecap="highprice = $event"/>
+      <app-sidebar :pricerange.sync="highprice"/>
       <transition-group name="items" tag="section" class="content">
         <app-item 
           v-for="(item, index) in wProducts"
