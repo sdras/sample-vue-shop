@@ -8,8 +8,8 @@
     "pages/men.b0d4fd0ef0d516183a92.js",
     "layouts/default.c30c29b7c9b3786bde94.js",
     "common.8128640c49a422d3e4b3.js",
-    "app.9a249958c225489b1ffb.js",
-    "manifest.ba4fa97aea0993d7cab0.js",
+    "app.a82388b7c8b3467f785f.js",
+    "manifest.46f1c385ae47a91f6f93.js",
     "LICENSES",
     "pages/sale.bd5be994ecab3547b004.js",
     "pages/sale.bd5be994ecab3547b004.js.map",
@@ -18,15 +18,15 @@
     "pages/men.b0d4fd0ef0d516183a92.js.map",
     "layouts/default.c30c29b7c9b3786bde94.js.map",
     "common.8128640c49a422d3e4b3.js.map",
-    "app.9a249958c225489b1ffb.js.map",
-    "manifest.ba4fa97aea0993d7cab0.js.map",
+    "app.a82388b7c8b3467f785f.js.map",
+    "manifest.46f1c385ae47a91f6f93.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.ba4fa97aea0993d7cab0.js",
+    "manifest.46f1c385ae47a91f6f93.js",
     "common.8128640c49a422d3e4b3.js",
-    "app.9a249958c225489b1ffb.js"
+    "app.a82388b7c8b3467f785f.js"
   ],
   "async": [
     "pages/cart.8ee4f9d335f58c37c289.js",
