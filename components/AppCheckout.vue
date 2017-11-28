@@ -17,12 +17,7 @@
         <button class='pay-with-stripe' @click='pay' :disabled='!complete || !stripeEmail'>Pay with credit card</button>
       </div>
       <div v-else class="statussubmit">
-        <div v-if="status === 'success'">
-          <app-success />
-          <h2>Success!</h2>
-          <p>Your order has been processed, it will be delivered shortly.</p>
-        </div>
-        <div v-else-if="status === 'failure'">
+        <div v-if="status === 'failure'">
           <h3>Oh No!</h3>
           <p>Something went wrong!</p>
           <button @click="clearCart">Please try again</button>
@@ -38,15 +33,13 @@
 
 <script>
 import { Card, createToken } from 'vue-stripe-elements-plus';
-import AppSuccess from './AppSuccess.vue';
 import AppLoader from './AppLoader.vue';
 import axios from 'axios';
 
 export default {
   components: {
     Card,
-    AppLoader,
-    AppSuccess
+    AppLoader
   },
   props: {
     total: {
@@ -93,12 +86,16 @@ export default {
           .then(response => {
             this.status = 'success';
             this.$emit('successSubmit');
-            //this.$store.commit('clearCartCount');
+            this.$store.commit('clearCartCount');
+
+            //console logs for you :)
             this.response = JSON.stringify(response, null, 2);
             console.log(this.response);
           })
           .catch(error => {
             this.status = 'failure';
+
+            //console logs for you :)
             this.response = 'Error: ' + JSON.stringify(error, null, 2);
             console.log(this.response);
           });

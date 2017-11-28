@@ -1,8 +1,10 @@
 <template>
-  <div class="capsule">
-    <div v-if="cartTotal > 0" class="cart">
+  <div class="capsule cart">
+    <div v-if="cartTotal > 0">
       <h1>Cart</h1>
-      <div class="cartitems" v-for="item in cart">
+      <div class="cartitems" 
+        v-for="item in cart" 
+        key="item">
         <div class="carttext">
           <h4>{{ item.name }}</h4>
           <p>{{ item.price | usdollar }} x {{ item.count }}</p>
@@ -11,20 +13,26 @@
         <img class="cartimg" :src="`/${item.img}`" :alt="`Image of ${item.name}`">
       </div>
       <div class="total">
-        <h3>Total: {{ total }}</h3>
+        <h3>Total: {{ total | usdollar }}</h3>
       </div>
       <app-checkout :total="total" @successSubmit="success = true"></app-checkout>
     </div>
-    <div v-else class="cart empty">
+    <div v-else-if="cartTotal === 0 && success === false" class="empty">
       <h1>Cart</h1>
       <h3>Your cart is empty.</h3>
       <nuxt-link exact to="/"><button>Fill er up!</button></nuxt-link>
+    </div>
+    <div v-else>
+      <app-success @restartCart="success = false"/>
+      <h2>Success!</h2>
+      <p>Your order has been processed, it will be delivered shortly.</p>
     </div>
   </div>
 </template>
 
 <script>
 import AppCheckout from './../components/AppCheckout.vue';
+import AppSuccess from './../components/AppSuccess.vue';
 
 export default {
   data() {
@@ -33,7 +41,8 @@ export default {
     };
   },
   components: {
-    AppCheckout
+    AppCheckout,
+    AppSuccess
   },
   computed: {
     cart() {
@@ -55,15 +64,12 @@ export default {
     usdollar: function(value) {
       return `$${value}`;
     }
-  },
-  mounted() {
-    console.log(this.cart);
   }
 };
 </script>
 
 <style scoped>
-.cart {
+.cart > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
