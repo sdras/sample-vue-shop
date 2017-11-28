@@ -191,7 +191,6 @@ h4 {
   *:after {
     box-sizing: border-box;
   }
-  //overflow: hidden;
 
   input[type='checkbox'] {
     opacity: 0;
@@ -264,17 +263,8 @@ h4 {
 
   &.demo-rebrand-2 {
     cursor: pointer;
-    @include can-toggle-branding (#888, 
- #3e64ea,
- rgba(white, 0.7), 
- ease);
-    @include can-toggle-appearance (60px, 
- 30px, 
- 22px, 
- 3px,
- 0,
- 9px, 
- 0 2px 4px rgba(black, 0.2));
+    @include can-toggle-branding (#888, #3e64ea, rgba(white, 0.7), ease);
+    @include can-toggle-appearance (60px, 30px, 22px, 3px, 0, 9px, 0 2px 4px rgba(black, 0.2));
   }
 }
 

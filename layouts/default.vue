@@ -12,7 +12,7 @@
 
 <script>
 import AppNavigation from './../components/AppNavigation.vue';
-import AppFooter from './../components/AppFooter.vue'
+import AppFooter from './../components/AppFooter.vue';
 
 export default {
   components: {
@@ -23,14 +23,15 @@ export default {
 </script>
 
 <style>
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
 
 .clear {
   clear: both;
-} 
+}
 
 /* sticky footer stuff */
 .wrapper {
