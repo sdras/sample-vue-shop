@@ -6,12 +6,16 @@ how a number of concepts work in Vue. Server side rendering and routing is done
 with Nuxt.js. Centralized state management with Vuex for product details. Of
 note, using computed properties, `.sync`, CSS Grid, and `transition-group`.
 
-Live demo at http://shoppity.azurewebsites.net/
+Live demo at
+[http://shoppity.azurewebsites.net/](http://shoppity.azurewebsites.net/)
 
-Article series explaining the demo at https://css-tricks.com/ (this is a two
-part series)
+Article series explaining the demo at
+[https://css-tricks.com/](https://css-tricks.com/) (this is a two part series)
 
-https://ibb.co/bzC07m
+The serverless function is open source as well, available at this repo
+[https://github.com/sdras/sample-stripe-handler](https://github.com/sdras/sample-stripe-handler)
+
+![Vue stripe sample shop](https://ibb.co/bzC07m "Vue Stripe Sample Shop")
 
 ## Build Setup
 
