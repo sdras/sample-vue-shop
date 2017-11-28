@@ -158,6 +158,21 @@ aside {
   transform-origin: 50% 50%;
 }
 
+/* --- fade animation --- */
+
+.fade-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.fade-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 /* --- range --- */
 
 input[type='range'].slider {
