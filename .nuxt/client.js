@@ -29,6 +29,30 @@ const NUXT = window.__NUXT__ || {}
 NUXT.components = window.__COMPONENTS__ || null
 
 
+// Setup global Vue error handler
+const defaultErrorHandler = Vue.config.errorHandler
+Vue.config.errorHandler = function (err, vm, info) {
+  err.statusCode = err.statusCode || err.name || 'Whoops!'
+  err.message = err.message || err.toString()
+
+  // Show Nuxt Error Page
+  if(vm && vm.$root && vm.$root.$nuxt && vm.$root.$nuxt.error && info !== 'render function') {
+    vm.$root.$nuxt.error(err)
+  }
+
+  // Call other handler if exist
+  if (typeof defaultErrorHandler === 'function') {
+    return defaultErrorHandler(...arguments)
+  }
+
+  // Log to console
+  if (process.env.NODE_ENV !== 'production') {
+    console.error(err)
+  } else {
+    console.error(err.message)
+  }
+}
+
 
 // Create and mount App
 createApp()
