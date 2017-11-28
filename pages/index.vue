@@ -2,7 +2,7 @@
   <main class="capsule">
     <app-masthead/>
     <div class="contain">
-      <app-sidebar :pricerange="highprice" @pricecap="highprice = $event"/>
+      <app-sidebar :pricerange.sync="highprice"/>
       <transition-group name="items" tag="section" class="content">
         <app-item 
           v-for="(item, index) in products"
