@@ -1,8 +1,8 @@
 <template>
   <aside>
     <div class="sidearea">
-      <label for="pricerange">Highest Price: <span>${{ price }}</span></label>
-      <input class="slider" id="pricerange" v-model="price" type="range" :min="min" :max="max" step="0.1">
+      <label for="pricerange">Highest Price: <span>${{ pricerange }}</span></label>
+      <input class="slider" id="pricerange" :value="pricerange" type="range" :min="min" :max="max" step="0.1" @input="$emit('update:pricerange', $event.target.value)">
       <span class="min">${{ min }}</span>
       <span class="max">${{ max }}</span>
     </div>
@@ -34,19 +34,22 @@ export default {
   },
   data() {
     return {
-      price: 300,
+      //price: 300,
       min: 0,
       max: 400
     };
   },
-  watch: {
-    price() {
-      this.pricerange = this.price;
-    },
-    pricerange() {
-      this.$emit('pricecap', this.price);
-    }
-  },
+  // methods: {
+
+  // },
+  // watch: {
+  //   // price() {
+  //   //   this.pricerange = this.price;
+  //   // },
+  //   // pricerange() {
+  //   //   this.$emit('pricecap', this.price);
+  //   // }
+  // },
   components: {
     AppSwitch
   }
