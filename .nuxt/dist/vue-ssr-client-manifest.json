@@ -6,25 +6,25 @@
     "pages/index.bc753ab75fa077f8731b.js",
     "pages/women.af84e502a4ed238697c8.js",
     "pages/men.b0d4fd0ef0d516183a92.js",
-    "layouts/default.c30c29b7c9b3786bde94.js",
+    "layouts/default.b96ce676a48e8edd70cd.js",
     "common.8128640c49a422d3e4b3.js",
     "app.a82388b7c8b3467f785f.js",
-    "manifest.46f1c385ae47a91f6f93.js",
+    "manifest.707f3bbc5e9631afc91c.js",
     "LICENSES",
     "pages/sale.bd5be994ecab3547b004.js",
     "pages/sale.bd5be994ecab3547b004.js.map",
     "pages/index.bc753ab75fa077f8731b.js.map",
     "pages/women.af84e502a4ed238697c8.js.map",
     "pages/men.b0d4fd0ef0d516183a92.js.map",
-    "layouts/default.c30c29b7c9b3786bde94.js.map",
+    "layouts/default.b96ce676a48e8edd70cd.js.map",
     "common.8128640c49a422d3e4b3.js.map",
     "app.a82388b7c8b3467f785f.js.map",
-    "manifest.46f1c385ae47a91f6f93.js.map",
+    "manifest.707f3bbc5e9631afc91c.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.46f1c385ae47a91f6f93.js",
+    "manifest.707f3bbc5e9631afc91c.js",
     "common.8128640c49a422d3e4b3.js",
     "app.a82388b7c8b3467f785f.js"
   ],
@@ -33,7 +33,7 @@
     "pages/index.bc753ab75fa077f8731b.js",
     "pages/women.af84e502a4ed238697c8.js",
     "pages/men.b0d4fd0ef0d516183a92.js",
-    "layouts/default.c30c29b7c9b3786bde94.js",
+    "layouts/default.b96ce676a48e8edd70cd.js",
     "pages/sale.bd5be994ecab3547b004.js"
   ],
   "modules": {
@@ -112,10 +112,6 @@
     "796bee7f": [
       6,
       16
-    ],
-    "70079b04": [
-      5,
-      15
     ],
     "27f87044": [
       6,
@@ -233,10 +229,6 @@
       5,
       15
     ],
-    "f142b17a": [
-      5,
-      15
-    ],
     "ee6835dc": [
       6,
       16
@@ -332,6 +324,10 @@
     "dddf6098": [
       7,
       17
+    ],
+    "4a3fac8e": [
+      5,
+      15
     ],
     "1b427bdc": [
       6,
@@ -433,6 +429,10 @@
       4,
       14
     ],
+    "1e322338": [
+      5,
+      15
+    ],
     "c70f8c2a": [
       5,
       15
@@ -477,10 +477,6 @@
       6,
       16
     ],
-    "5e7e5c1a": [
-      5,
-      15
-    ],
     "66934cc2": [
       6,
       16
@@ -492,10 +488,6 @@
     "64b3949e": [
       7,
       17
-    ],
-    "ba0b4dc2": [
-      5,
-      15
     ],
     "7e56f178": [
       7,
@@ -520,10 +512,6 @@
     "8a129cae": [
       6,
       16
-    ],
-    "497ce7b0": [
-      5,
-      15
     ],
     "79c4c864": [
       6,
@@ -577,13 +565,13 @@
       1,
       0
     ],
-    "2e054411": [
-      5,
-      15
-    ],
     "97c452dc": [
       6,
       16
+    ],
+    "687f3c80": [
+      5,
+      15
     ],
     "33c73ee3": [
       6,
@@ -821,6 +809,10 @@
       1,
       0
     ],
+    "2b0ab098": [
+      5,
+      15
+    ],
     "456652e3": [
       1,
       0
@@ -865,6 +857,10 @@
       6,
       16
     ],
+    "778b866a": [
+      5,
+      15
+    ],
     "c25ad284": [
       7,
       17
@@ -888,6 +884,14 @@
     "3d3d751e": [
       1,
       0
+    ],
+    "fa55e334": [
+      6,
+      16
+    ],
+    "629e580d": [
+      6,
+      16
     ],
     "df9922ea": [
       6,
@@ -913,13 +917,13 @@
       2,
       12
     ],
+    "7ba7afec": [
+      5,
+      15
+    ],
     "641e07c6": [
       7,
       17
-    ],
-    "fa55e334": [
-      6,
-      16
     ],
     "79acef9b": [
       6,
@@ -954,10 +958,6 @@
       0
     ],
     "e5b7738a": [
-      6,
-      16
-    ],
-    "629e580d": [
       6,
       16
     ],

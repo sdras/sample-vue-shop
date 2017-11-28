@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="wrapper">
-    <app-navigation />
+      <app-navigation />
       <nuxt/>
       <div class="clear"></div>
-     <div class="push"></div>
+      <div class="push"></div>
     </div>
     <app-footer class="footer" />
   </div>
