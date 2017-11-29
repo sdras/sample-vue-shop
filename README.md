@@ -7,7 +7,7 @@ with Nuxt.js. Centralized state management with Vuex for product details. Of
 note, using computed properties, `.sync`, CSS Grid, and `transition-group`.
 
 Live demo at
-[http://shoppity.azurewebsites.net/](http://shoppity.azurewebsites.net/)
+[https://shoppity.azurewebsites.net/](https://shoppity.azurewebsites.net/)
 
 Article series explaining the demo at
 [https://css-tricks.com/](https://css-tricks.com/) (this is a two part series)
