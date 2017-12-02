@@ -1,11 +1,13 @@
 <template>
   <div>
     <transition name="fade">
+
       <div v-if="!submitted" class="payment">
         <h3>Please enter your payment details:</h3>
         <label for="email">Email</label>
         <input id="email" type="email" v-model="stripeEmail" placeholder="name@example.com"/>
         <label for="card">Credit Card</label>
+        <p>Test using this credit card: <span class="cc-number">4242 4242 4242 4242</span>, and enter any 5 digits for the zip code</p>
         <card class='stripe-card'
           id="card"
           :class='{ complete }'
@@ -13,20 +15,22 @@
           :options='stripeOptions'
           @change='complete = $event.complete'
         />
-        <p>Testing credit card number: 4242 4242 4242 4242</p>
         <button class='pay-with-stripe' @click='pay' :disabled='!complete || !stripeEmail'>Pay with credit card</button>
       </div>
+
       <div v-else class="statussubmit">
         <div v-if="status === 'failure'">
           <h3>Oh No!</h3>
           <p>Something went wrong!</p>
           <button @click="clearCart">Please try again</button>
         </div>
+
         <div v-else class="loadcontain">
           <h4>Please hold, we're filling up your cart with goodies</h4>
           <app-loader />
         </div>
       </div>
+
     </transition>
   </div>
 </template>
@@ -130,11 +134,12 @@ export default {
   border: 1px solid #ccc;
 }
 p {
-  margin: 10px 0 20px;
+  margin: 0 0 10px;
 }
 label {
   color: black;
-  margin-top: 15px;
+  margin: 15px 0 5px;
+  font-family: 'Playfair Display', sans-serif;
 }
 button[disabled] {
   color: #ccc;
@@ -146,6 +151,13 @@ button[disabled] {
 }
 .loadcontain {
   text-align: center;
+}
+.stripe-card {
+  margin-bottom: 10px;
+}
+.cc-number {
+  color: #3964e8;
+  font-weight: bold;
 }
 
 /* -- transition --*/

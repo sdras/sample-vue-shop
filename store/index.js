@@ -106,28 +106,8 @@ const createStore = () => {
       ]
     },
     getters: {
-      women: state => {
-        const wTemp = [];
-        state.products.forEach(el => {
-          Object.keys(el).forEach(key => {
-            if (el[key] == 'women') {
-              wTemp.push(el);
-            }
-          });
-        });
-        return wTemp;
-      },
-      men: state => {
-        const mTemp = [];
-        state.products.forEach(el => {
-          Object.keys(el).forEach(key => {
-            if (el[key] == 'men') {
-              mTemp.push(el);
-            }
-          });
-        });
-        return mTemp;
-      },
+      women: state => filterProducts(state, 'women'),
+      men: state => filterProducts(state, 'men'),
       sale: state => {
         const sTemp = [];
         state.products.forEach(el => {
@@ -163,3 +143,16 @@ const createStore = () => {
 };
 
 export default createStore;
+
+//helper
+const filterProducts = (state, filterBy) => {
+  const temp = [];
+  state.products.forEach(el => {
+    Object.keys(el).forEach(key => {
+      if (el[key] == filterBy) {
+        temp.push(el);
+      }
+    });
+  });
+  return temp;
+};
