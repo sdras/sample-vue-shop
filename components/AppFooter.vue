@@ -1,14 +1,8 @@
 <template>
   <footer>
-    Made with 🎸 from <a href="https://twitter.com/sarah_edo" target="_blank">sarah_edo</a>
+    Made with 🎸 from <a href="https://twitter.com/sarah_edo" target="_blank">sarah_edo</a>. This project is open source, visit <a href="https://github.com/sdras/sample-vue-shop" target="_blank">the repo.</a>
   </footer>
 </template>
-
-<script>
-  export default {
-    
-  }
-</script>
 
 <style scoped>
 footer {
@@ -25,7 +19,9 @@ footer {
   height: 50px;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   color: white;
   font-weight: bold;
   text-decoration: none;
