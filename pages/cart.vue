@@ -1,5 +1,6 @@
 <template>
   <div class="capsule cart">
+
     <div v-if="cartTotal > 0">
       <h1>Cart</h1>
       <div class="cartitems" 
@@ -17,16 +18,19 @@
       </div>
       <app-checkout :total="total" @successSubmit="success = true"></app-checkout>
     </div>
+
     <div v-else-if="cartTotal === 0 && success === false" class="empty">
       <h1>Cart</h1>
       <h3>Your cart is empty.</h3>
       <nuxt-link exact to="/"><button>Fill er up!</button></nuxt-link>
     </div>
+
     <div v-else>
       <app-success @restartCart="success = false"/>
       <h2>Success!</h2>
       <p>Your order has been processed, it will be delivered shortly.</p>
     </div>
+    
   </div>
 </template>
 

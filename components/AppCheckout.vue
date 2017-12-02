@@ -29,8 +29,8 @@
           <h4>Please hold, we're filling up your cart with goodies</h4>
           <app-loader />
         </div>
-
       </div>
+
     </transition>
   </div>
 </template>
