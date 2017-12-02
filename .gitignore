@@ -70,3 +70,19 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Other
+.nuxt
+.cache
+
+# Dist folder
+dist
+
+# Dist example generation
+examples/**/dist
+
+# Coverage support
+coverage
+*.lcov
+.nyc_output
+.vscode
