@@ -3,8 +3,8 @@
 
     <div v-if="cartTotal > 0">
       <h1>Cart</h1>
-      <div class="cartitems" 
-        v-for="item in cart" 
+      <div class="cartitems"
+        v-for="item in cart"
         key="item">
         <div class="carttext">
           <h4>{{ item.name }}</h4>
@@ -30,7 +30,7 @@
       <h2>Success!</h2>
       <p>Your order has been processed, it will be delivered shortly.</p>
     </div>
-    
+
   </div>
 </template>
 
@@ -56,12 +56,9 @@ export default {
       return this.$store.state.cartTotal;
     },
     total() {
-      let arr = [];
-      Object.values(this.cart).forEach(el => {
-        arr.push(el.count * el.price);
-      });
-      const result = arr.reduce((a, b) => a + b);
-      return result.toFixed(2);
+      return Object.values(this.cart)
+        .reduce((acc, el) => acc + (el.count * el.price), 0)
+        .toFixed(2);
     }
   },
   filters: {

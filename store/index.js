@@ -106,17 +106,9 @@ const createStore = () => {
       ]
     },
     getters: {
-      women: state => filterProducts(state, 'women'),
-      men: state => filterProducts(state, 'men'),
-      sale: state => {
-        const sTemp = [];
-        state.products.forEach(el => {
-          if (el['sale'] === true) {
-            sTemp.push(el);
-          }
-        });
-        return sTemp;
-      }
+      women: state => filter(state.products, 'category', 'women'),
+      men: state => filter(state.products, 'category', 'men'),
+      sale: state => filter(state.products, 'sale', true)
     },
     mutations: {
       switchSale: state => {
@@ -145,14 +137,4 @@ const createStore = () => {
 export default createStore;
 
 //helper
-const filterProducts = (state, filterBy) => {
-  const temp = [];
-  state.products.forEach(el => {
-    Object.keys(el).forEach(key => {
-      if (el[key] == filterBy) {
-        temp.push(el);
-      }
-    });
-  });
-  return temp;
-};
+const filter = (array, key, value) => array.filter(item => item[key] === value);

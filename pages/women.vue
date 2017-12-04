@@ -4,7 +4,7 @@
     <div class="contain">
       <app-sidebar :pricerange.sync="highprice"/>
       <transition-group name="items" tag="section" class="content">
-        <app-item 
+        <app-item
           v-for="(item, index) in wProducts"
           key="item"
           :item="item"
@@ -33,19 +33,11 @@ export default {
   },
   computed: {
     wProducts() {
-      let temp = [];
-      this.$store.getters.women.forEach(el => {
-        if (this.$store.state.sale) {
-          if (el.price < this.highprice && el.sale) {
-            temp.push(el);
-          }
-        } else {
-          if (el.price < this.highprice) {
-            temp.push(el);
-          }
-        }
-      });
-      return temp;
+      return this.$store.getters.women.filter(el =>
+        this.$store.state.sale
+          ? el.price < this.highprice && el.sale
+          : el.price < this.highprice
+      );
     }
   }
 };
