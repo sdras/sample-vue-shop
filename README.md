@@ -9,8 +9,8 @@ note, using computed properties, `.sync`, CSS Grid, and `transition-group`.
 Live demo at
 [https://shoppity.azurewebsites.net/](https://shoppity.azurewebsites.net/)
 
-Article series explaining the demo at
-[https://css-tricks.com/](https://css-tricks.com/) (this is a two part series)
+Articles explaining the demo will be available soon at
+[https://css-tricks.com/](https://css-tricks.com/)
 
 The serverless function is open source as well, available at this repo
 [https://github.com/sdras/sample-stripe-handler](https://github.com/sdras/sample-stripe-handler)
