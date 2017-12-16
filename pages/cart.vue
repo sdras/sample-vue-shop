@@ -35,14 +35,14 @@
 </template>
 
 <script>
-import AppCheckout from './../components/AppCheckout.vue';
-import AppSuccess from './../components/AppSuccess.vue';
+import AppCheckout from './../components/AppCheckout.vue'
+import AppSuccess from './../components/AppSuccess.vue'
 
 export default {
   data() {
     return {
       success: false
-    };
+    }
   },
   components: {
     AppCheckout,
@@ -50,23 +50,23 @@ export default {
   },
   computed: {
     cart() {
-      return this.$store.state.cart;
+      return this.$store.state.cart
     },
     cartTotal() {
-      return this.$store.state.cartTotal;
+      return this.$store.state.cartTotal
     },
     total() {
       return Object.values(this.cart)
         .reduce((acc, el) => acc + (el.count * el.price), 0)
-        .toFixed(2);
+        .toFixed(2)
     }
   },
   filters: {
     usdollar: function(value) {
-      return `$${value}`;
+      return `$${value}`
     }
   }
-};
+}
 </script>
 
 <style scoped>

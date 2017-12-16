@@ -2,14 +2,14 @@
   <aside>
     <div class="sidearea">
       <label for="pricerange">Highest Price: <span>${{ pricerange }}</span></label>
-      <input 
-        class="slider" 
-        id="pricerange" 
+      <input
+        class="slider"
+        id="pricerange"
         type="range"
-        :value="pricerange"  
-        :min="min" 
-        :max="max" 
-        step="0.1" 
+        :value="pricerange"
+        :min="min"
+        :max="max"
+        step="0.1"
         @input="$emit('update:pricerange', $event.target.value)"
       />
       <span class="min">${{ min }}</span>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import AppSwitch from './AppSwitch.vue';
+import AppSwitch from './AppSwitch.vue'
 
 export default {
   props: {
@@ -45,12 +45,12 @@ export default {
     return {
       min: 0,
       max: 400
-    };
+    }
   },
   components: {
     AppSwitch
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

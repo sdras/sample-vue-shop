@@ -8,28 +8,28 @@
 </template>
 
 <script>
-import { TweenMax, Elastic, set } from 'gsap';
+import { TweenMax, Elastic } from 'gsap'
 
 export default {
   mounted() {
     TweenMax.set('.success1, .success2', {
       transformOrigin: '50% 50%'
-    });
+    })
 
     TweenMax.from('.success1', 1.25, {
       scaleX: 0,
       ease: Elastic.easeOut.config(1, 0.75)
-    });
+    })
 
     TweenMax.from('.success2', 1.25, {
       scaleX: -1,
       rotation: 360,
       ease: Elastic.easeOut.config(1, 0.75)
-    });
+    })
 
-    window.setTimeout(() => this.$emit('restartCart'), 3000);
+    window.setTimeout(() => this.$emit('restartCart'), 3000)
   }
-};
+}
 </script>
 
 <style scoped>

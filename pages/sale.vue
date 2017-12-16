@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import AppSidebar from './../components/AppSidebar.vue';
-import AppMasthead from './../components/AppMasthead.vue';
-import AppItem from './../components/AppItem.vue';
+import AppSidebar from './../components/AppSidebar.vue'
+import AppMasthead from './../components/AppMasthead.vue'
+import AppItem from './../components/AppItem.vue'
 
 export default {
   components: {
@@ -31,14 +31,14 @@ export default {
   data() {
     return {
       highprice: 300
-    };
+    }
   },
   computed: {
     sProducts() {
-      return this.$store.getters.sale.filter(el => el.price < this.highprice);
+      return this.$store.getters.sale.filter(el => el.price < this.highprice)
     }
   }
-};
+}
 </script>
 
 <style>
