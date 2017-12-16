@@ -34,7 +34,7 @@ export default {
       default: 'banner-ppl'
     }
   }
-};
+}
 </script>
 
 <style scoped>

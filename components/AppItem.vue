@@ -22,15 +22,15 @@ export default {
   },
   filters: {
     usdollar: function(value) {
-      return `$${value}`;
+      return `$${value}`
     }
   },
   methods: {
     addItem() {
-      this.$store.commit('addItem', this.item);
+      this.$store.commit('addItem', this.item)
     }
   }
-};
+}
 </script>
 
 <style scoped>

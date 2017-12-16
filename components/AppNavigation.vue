@@ -38,10 +38,10 @@
 export default {
   computed: {
     cartTotal() {
-      return this.$store.state.cartTotal;
+      return this.$store.state.cartTotal
     }
   }
-};
+}
 </script>
 
 <style scoped>
