@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navarea">
     <nav>
       <div class="capsule">
         <nuxt-link exact to="/">
@@ -45,6 +45,10 @@ export default {
 </script>
 
 <style scoped>
+.navarea {
+  overflow: hidden;
+}
+
 .capsule {
   display: flex;
   justify-content: space-between;
