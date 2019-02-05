@@ -22,7 +22,7 @@
     </div>
     <div class="sidearea callout">
       <h4>Contact Us</h4>
-      <p>Questions? Call us at 1-888-555-SHOP, we're happy to be of service.</p>
+      <p>Questions? Call us at 1-800-DEMO-SHOP, we're happy to be of service.</p>
     </div>
   </aside>
 </template>
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       min: 0,
-      max: 400
+      max: 150
     };
   },
   components: {
