@@ -1,4 +1,4 @@
-** note: This repo is no longer being maintained in favor of a newer, improved version: [https://github.com/sdras/ecommerce-netlify](https://github.com/sdras/ecommerce-netlify)
+**Note: This repo is no longer being maintained in favor of a newer, improved version: [https://github.com/sdras/ecommerce-netlify](https://github.com/sdras/ecommerce-netlify)**
 
 # Vue Sample Shop
 
