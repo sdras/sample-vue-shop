@@ -1,3 +1,5 @@
+** note: This repo is no longer being maintained in favor of a newer, improved version: [https://github.com/sdras/ecommerce-netlify](https://github.com/sdras/ecommerce-netlify)
+
 # Vue Sample Shop
 
 This small demo shows how to accept payments with stripe with Vue.js using a
