@@ -1,5 +1,3 @@
-**Note: This repo is no longer being maintained in favor of a newer, improved version: [https://github.com/sdras/ecommerce-netlify](https://github.com/sdras/ecommerce-netlify)**
-
 # Vue Sample Shop
 
 This small demo shows how to accept payments with stripe with Vue.js using a
@@ -9,7 +7,7 @@ with Nuxt.js. Centralized state management with Vuex for product details. Of
 note, using computed properties, `.sync`, CSS Grid, and `transition-group`.
 
 Live demo at
-[https://shoppity.azurewebsites.net/](https://shoppity.azurewebsites.net/)
+[https://demo.gondolatest.com/](https://demo.gondolatest.com/)
 
 Articles explaining the demo will be available soon at
 [https://css-tricks.com/](https://css-tricks.com/)
@@ -23,11 +21,14 @@ The serverless function is open source as well, available at this repo
 
 ```bash
 # install dependencies
-$ npm install # Or yarn
+$ yarn
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn dev
 
 # generate static project, get ready for launch on app services
-$ npm run generate
+$ yarn generate
 ```
+
+# Credits
+- [Sarah Drasner](https://github.com/sdras)
