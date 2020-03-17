@@ -4,7 +4,7 @@
     <span class="salepill" v-if="item.sale">Sale</span>
     <img :src="`/${item.img}`" :alt="`Image of ${item.name}`">
     <p>{{ item.price | usdollar }}</p>
-    <button class="add" @click="addItem">Add Item</button>
+    <button class="add" @click="addItem">Add To Cart</button>
   </div>
 </template>
 

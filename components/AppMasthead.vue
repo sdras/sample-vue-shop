@@ -27,7 +27,7 @@ export default {
     },
     title: {
       type: String,
-      default: 'Shoppity'
+      default: 'Shop'
     },
     img: {
       type: String,
