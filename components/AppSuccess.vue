@@ -25,9 +25,7 @@ export default {
       scaleX: -1,
       rotation: 360,
       ease: Elastic.easeOut.config(1, 0.75)
-    });
-
-    window.setTimeout(() => this.$emit('restartCart'), 3000);
+    });  
   }
 };
 </script>

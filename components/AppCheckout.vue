@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <transition name="fade">
 
@@ -70,9 +70,11 @@ export default {
   },
   methods: {
     pay() {
+      this.submitted = true;
       this.status = 'success';
       this.$emit('successSubmit');
       this.$store.commit('clearCartCount');
+      this.$store.commit('clearCartContents');
     },
     clearCart() {
       this.submitted = false;
