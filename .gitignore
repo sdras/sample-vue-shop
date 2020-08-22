@@ -86,3 +86,5 @@ coverage
 *.lcov
 .nyc_output
 .vscode
+built
+results

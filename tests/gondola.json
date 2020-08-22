@@ -1,0 +1,77 @@
+{
+    "tests": "./built/**/*_test.js",
+    "timeout": 10000,
+    "output": "./results",
+    "helpers": {
+        "WebDriver": {
+            "hostname": "webdriver",
+            "url": "http://testsite",
+            "browser": "chrome",            
+            "restart": true,
+            "keepBrowserState": false,
+            "keepCookies": false,
+            "waitForTimeout": 10000,
+            "smartWait": 5000,
+            "timeouts": {
+                "script": 60000,
+                "pageLoad": 10000
+            },
+            "desiredCapabilities": {
+                "chromeOptions": {
+                    "args": [
+                        "--disable-gpu",
+                        "--no-sandbox"
+                    ]
+                }
+            }
+        },
+        "Mochawesome": {}
+    },
+    "include": {},
+    "bootstrap": false,
+    "plugins": {
+        "screenshotOnFail": {
+            "enabled": true
+        }
+    },
+    "mocha": {
+        "reporter": "mocha-multi",
+        "reporterOptions": {
+            "codeceptjs-cli-reporter": {
+                "stdout": "results/console.log",
+                "options": {
+                    "verbose": true,
+                    "steps": true
+                }
+            },
+            "mocha-junit-reporter": {
+                "stdout": "-",
+                "options": {
+                    "mochaFile": "./results/xunit-result.xml",
+                    "attachments": true
+                },
+                "attachments": true
+            },
+            "mochawesome": {
+                "stdout": "-",
+                "options": {
+                    "reportDir": "results",
+                    "inlineAssets": true,
+                    "timestamp": "isoDateTime",
+                    "reportFilename": "gondola",
+                    "autoOpen": true,
+                    "reportPageTitle": "Gondola Test Result"
+                }
+            }
+        }
+    },
+    "multiple": {
+        "parallel": {
+            "browsers": [
+                "chrome",
+                "firefox"
+            ]
+        }
+    },
+    "name": "ts_example"
+}

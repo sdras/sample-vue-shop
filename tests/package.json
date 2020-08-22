@@ -1,0 +1,27 @@
+{
+    "name": "tests",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rimraf built",
+        "clean-dev": "./node_modules/.bin/tsc -b --clean --dev",
+        "compile": "npm run clean && tsc",
+        "parallel": "./node_modules/.bin/gondola run-multiple parallel --reporter mochawesome",
+        "test": "./node_modules/.bin/gondola run --steps --reporter mocha-multi"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "gondolajs": "file:lib/gondolajs-1.6.64.tgz",
+        "mocha-junit-reporter": "^2.0.0",
+        "mocha-multi": "^1.1.3",
+        "mochawesome": "^4.1.0",
+        "rimraf": "3.0.2",
+        "webdriverio": "^5.18.4"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.15",
+        "typescript": "^3.7.3"
+    }
+}

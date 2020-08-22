@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+  testsite:
+    image: nginx:stable
+    volumes: 
+      - ../dist:/usr/share/nginx/html
+
+  webdriver:
+    image: selenium/standalone-chrome
+    depends_on: 
+        - testsite
+      
+  gondola.tester:
+    image: node:lts
+    depends_on: 
+        - webdriver
+    environment:
+      - G_LS_TOKEN=${G_LS_TOKEN}
+    volumes: 
+      - .:/src
+    command: npm run test
+    working_dir: /src
+
+  gondola.builder:
+    image: node:lts
+    volumes: 
+        - ..:/src
+    command: /src/.circleci/build.sh
+    working_dir: /src
