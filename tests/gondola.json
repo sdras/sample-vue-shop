@@ -37,13 +37,6 @@
     "mocha": {
         "reporter": "mocha-multi",
         "reporterOptions": {
-            "codeceptjs-cli-reporter": {
-                "stdout": "results/console.log",
-                "options": {
-                    "verbose": true,
-                    "steps": true
-                }
-            },
             "mocha-junit-reporter": {
                 "stdout": "-",
                 "options": {

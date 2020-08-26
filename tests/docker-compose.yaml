@@ -7,7 +7,7 @@ services:
       - ../dist:/usr/share/nginx/html
 
   webdriver:
-    image: selenium/standalone-chrome
+    image: selenium/standalone-${BROWSER}
     depends_on: 
         - testsite
       
@@ -17,9 +17,11 @@ services:
         - webdriver
     environment:
       - G_LS_TOKEN=${G_LS_TOKEN}
+      - BROWSER=${BROWSER}
     volumes: 
       - .:/src
-    command: npm run test
+    command: npm run test -- --override "{\"helpers\":{\"WebDriver\":{\"browser\":\"$BROWSER\"}}}"
+    #command: curl http://webdriver:4444/wd/hub/status
     working_dir: /src
 
   gondola.builder:

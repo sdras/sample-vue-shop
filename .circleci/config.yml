@@ -7,6 +7,10 @@ jobs:
   test:
     machine:
       image: 'circleci/classic:latest'
+    parameters:
+      browser:
+        type: string
+        default: chrome
     steps:
       - checkout
       #- node/install:
@@ -23,6 +27,8 @@ jobs:
           name: run all tests
           command: docker-compose run --rm gondola.tester
           working_directory: tests
+          environment:
+            BROWSER: << parameters.browser >>
       - store_test_results:
           path: tests/results/
       - store_artifacts:
@@ -34,3 +40,8 @@ workflows:
     jobs:
       - test:
           context: Gondola License
+          matrix:
+            parameters:
+              browser:
+                - chrome
+                - firefox
