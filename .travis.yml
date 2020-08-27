@@ -18,4 +18,5 @@ before_script:
     - selenium-standalone start &
     
 script:
+    - cd tests
     - npm run test -- --override '{"helpers":{"WebDriver":{"browser":"safari"}}}'
