@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - lts/*
+os: osx
+osx_image: xcode11.6
+
+jobs:
+  fast_finish: true
+
+
+install: 
+    - safaridriver --version
+    - sudo safaridriver --enable
+    - ./.circleci/build.sh
+    - npm i -g selenium-standalone
+    - selenium-standalone install
+    - npm i -g http-server
+
+before_script:
+    - selenium-standalone start &
+    - http-server dist &
+    - sleep 10
+    
+script:
+    - cd tests
+    - npm run test -- --override '{"helpers":{"WebDriver":{"hostname":"localhost","browser":"safari","url":"http://localhost:8080"}}}'
