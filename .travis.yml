@@ -1,12 +1,20 @@
 language: node_js
 node_js:
   - lts/*
-os: osx
-osx_image: xcode11.6
 
 jobs:
   fast_finish: true
+  include:
+    # 10.15.5
+    - os: osx
+      osx_image: xcode11.6
+    #10.14.6
+    - os: osx
+      osx_image: xcode11.3
 
+branches:
+  only:
+  - master
 
 install: 
     - safaridriver --version
