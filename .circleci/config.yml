@@ -18,7 +18,6 @@ jobs:
       #    lts: true
       #- run: npm --versions
       #- run: yarn --version
-      #- run: .circleci/build.sh
       - run:
           name: Build souce code & compile test project
           command: docker-compose run --rm gondola.builder
