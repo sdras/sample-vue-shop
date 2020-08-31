@@ -20,15 +20,18 @@ install:
     - safaridriver --version
     - sudo safaridriver --enable
     - ./.circleci/build.sh
-    - npm i -g selenium-standalone
-    - selenium-standalone install
+    - npm i -g webdriver-manager
+    - webdriver-manager update
     - npm i -g http-server
 
 before_script:
-    - selenium-standalone start &
+    - webdriver-manager start --detach
     - http-server dist &
     - sleep 10
     
 script:
     - cd tests
     - npm run test -- --override '{"helpers":{"WebDriver":{"hostname":"localhost","browser":"safari","url":"http://localhost:8080"}}}'
+    
+after_script:
+    - webdriver-manager shutdown
