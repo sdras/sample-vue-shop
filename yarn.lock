@@ -4292,10 +4292,10 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-gsap@^3.2.4:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.5.0.tgz#ca1753b062309390b46fb3fda245a4a65fb52c2a"
-  integrity sha512-YewxuqAE0HjytsKFRUnjiUz0TatHR6L1aJjalYob1ajQpWCZz+gTRJOgQWiABfTEcA6YpgUcrWLEvEIM1Fftpg==
+gsap@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.5.1.tgz#36cf76787d1758e749469d5e9cbe365c186544c4"
+  integrity sha512-EMV0RSUKZNeTUzLKAizGlwxVOUyif3/g8I3S1aA/hf3gbqwBvmQ02x1RdTBQNQMOpHCVBv9y/vaHwfctoAg8zw==
 
 gzip-size@^5.0.0:
   version "5.1.1"
