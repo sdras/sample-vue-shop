@@ -1,32 +1,42 @@
 version: '3.2'
 
+# This docker-compose file needs two environment variable to be able to run
+#   - BROWSER     allowed value: firefox, chrome
+#   - G_LS_TOKEN  the license token that is generated from your account
+#                 see more at https://docs.gondolatest.com/subscription/#generating-a-token
 services:
+  # This service runs the site at http://testsite/
+  #   and allow access from other services delared this compose file
   testsite:
     image: nginx:stable
     volumes: 
       - ../dist:/usr/share/nginx/html
 
+  # This service serves selenium standalone with given $BROWSER (firefox, chrome)
+  #   and its driver. See more at https://github.com/SeleniumHQ/docker-selenium/#standalone
   webdriver:
     image: selenium/standalone-${BROWSER}
     depends_on: 
-        - testsite
-      
+      - testsite
+  
+  # This service will run Gondola testscript when being called
   gondola.tester:
     image: node:lts
     depends_on: 
-        - webdriver
+      - webdriver
     environment:
       - G_LS_TOKEN=${G_LS_TOKEN}
       - BROWSER=${BROWSER}
     volumes: 
       - .:/src
     command: npm run test -- --override "{\"helpers\":{\"WebDriver\":{\"browser\":\"$BROWSER\"}}}"
-    #command: curl http://webdriver:4444/wd/hub/status
     working_dir: /src
 
+  # This service will generate static HTML files for testsite
+  #   and compile Gondola testscript for gondola.tester
   gondola.builder:
     image: node:lts
     volumes: 
-        - ..:/src
+      - ..:/src
     command: /src/.circleci/build.sh
     working_dir: /src
