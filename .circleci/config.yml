@@ -15,7 +15,7 @@ jobs:
       - checkout
       #- node/install:
       #    install-yarn: true
-      #    lts: true
+      #    lts: true 
       - run:
           name: Build souce code & compile test project
           command: docker-compose run --rm gondola.builder
