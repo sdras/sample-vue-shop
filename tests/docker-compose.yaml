@@ -21,7 +21,7 @@ services:
   
   # This service will run Gondola testscript when being called
   gondola.tester:
-    image: node:lts
+    image: node:lts-slim
     depends_on: 
       - webdriver
     environment:
@@ -35,7 +35,7 @@ services:
   # This service will generate static HTML files for testsite
   #   and compile Gondola testscript for gondola.tester
   gondola.builder:
-    image: node:lts
+    image: node:lts-slim
     volumes: 
       - ..:/src
     command: /src/.circleci/build.sh
