@@ -21,7 +21,7 @@ install:
     - sudo safaridriver --enable
     - ./.circleci/build.sh
     - npm i -g webdriver-manager
-    - webdriver-manager update
+    - webdriver-manager update --chrome=false --gecko=false
     - npm i -g http-server
 
 before_script:
