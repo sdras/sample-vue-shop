@@ -1,0 +1,44 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        #node-version: [10.x, 12.x, 14.x]
+        node-version: [14.x]
+        browser: [chrome, firefox]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Build souce code & compile test project
+      run: docker-compose run --rm gondola.builder
+      working-directory: tests
+    - name: run all tests
+      run: docker-compose run --rm gondola.tester
+      working-directory: tests
+      env:
+        BROWSER: ${{ matrix.browser }}
+        G_LS_TOKEN: ${{ secrets.G_LS_TOKEN }} 
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1.4
+      if: always()
+      with:
+        files: tests/results/**/*.xml
+        report_individual_runs: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
