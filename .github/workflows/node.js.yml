@@ -10,8 +10,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  build-and-test:
+    name: Build and Run Gondola tests
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,19 +26,42 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    
     - name: Build souce code & compile test project
       run: docker-compose run --rm gondola.builder
       working-directory: tests
-    - name: run all tests
+    
+    - name: Run all tests
       run: docker-compose run --rm gondola.tester
       working-directory: tests
       env:
         BROWSER: ${{ matrix.browser }}
         G_LS_TOKEN: ${{ secrets.G_LS_TOKEN }} 
-    - name: Publish Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v1.4
+    
+    - name: Upload Gondola Test Results
       if: always()
+      uses: actions/upload-artifact@v2
       with:
-        files: tests/results/**/*.xml
+        name: Gondola Test Results (Browser - ${{ matrix.browser }}, Node - ${{ matrix.node-version }})
+        path: tests/results/*
+    
+  publish-test-results:
+    name: "Publish Gondola xUnit Tests Results"
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    # the build-and-test job might be skipped, we don't need to run this job then
+    if: success() || failure()
+
+    steps:
+    - name: Download all result artifacts
+      uses: actions/download-artifact@v2
+    
+    - name: Publish Gondola xUnit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1.4
+      #if: always()
+      with:
+        check_name: Gondola xUnit Test Results
+        files: Gondola*/*.xml
         report_individual_runs: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        deduplicate_classes_by_file_name: true
