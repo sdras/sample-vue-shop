@@ -32,5 +32,6 @@ steps:
   workingDirectory: tests
   env:
     BROWSER: chrome
+    G_LS_TOKEN: ${G_LS_TOKEN}
 
 
