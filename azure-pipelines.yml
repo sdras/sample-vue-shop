@@ -39,7 +39,7 @@ steps:
   displayName: 'Run all tests'
   workingDirectory: tests
   env:
-    BROWSER: $(variables['browsers'])
+    BROWSER: $(browsers)
     G_LS_TOKEN: $(g.ls.token)
 
 
