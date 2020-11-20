@@ -10,10 +10,22 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: yarn & yarn generate
+  displayName: 'Build the site'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+# steps:
+# - script: cd tests
+#   displayName: 'Move to tests folder'
+
+# steps:
+# - script: npm ci & npm run compile
+#   displayName: 'Prepare for run test'
+
+steps:
+- script: docker-compose run --rm gondola.builder
+  displayName: 'Build souce code & compile test project'
+
+- script: docker-compose run --rm gondola.tester
+  displayName: 'Run all tests'
+
+
