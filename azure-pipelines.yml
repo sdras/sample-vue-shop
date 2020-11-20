@@ -26,7 +26,10 @@ steps:
 - script: cd tests
   displayName: 'Move to tests folder'
 
-- script: npm ci & npm run compile
+- script: 
+  - npm ci
+  - npm run compile
+
   displayName: 'Prepare for run test'
 
 - script: docker-compose run --rm gondola.builder
