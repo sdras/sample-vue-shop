@@ -22,6 +22,13 @@ pool:
 #   displayName: 'Prepare for run test'
 
 steps:
+
+- script: cd tests
+  displayName: 'Move to tests folder'
+
+- script: npm ci & npm run compile
+  displayName: 'Prepare for run test'
+
 - script: docker-compose run --rm gondola.builder
   displayName: 'Build souce code & compile test project'
 
