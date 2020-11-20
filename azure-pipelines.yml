@@ -9,6 +9,15 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+parameters:
+- name: browsers
+  displayName: Browsers
+  default: chrome
+  values:
+    - chrome
+    - firefox
+
+
 # steps:
 # - script: yarn & yarn generate
 #   displayName: 'Build the site'
@@ -31,11 +40,9 @@ steps:
   displayName: 'Run all tests'
   workingDirectory: tests
   env:
-    BROWSER: $(BROWSER)
+    BROWSER: ${{ parameters.browsers }}
     G_LS_TOKEN: $(g.ls.token)
 
-variables:
-  BROWSER: [chrome | firefox]
 
 
 
