@@ -35,7 +35,9 @@ steps:
     G_LS_TOKEN: $(g.ls.token)
 
 variables:
-  BROWSER: chrome, firefox
+  BROWSER: |
+    chrome
+    firefox
 
 
 
