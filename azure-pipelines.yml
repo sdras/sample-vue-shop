@@ -30,5 +30,7 @@ steps:
 - script: docker-compose run --rm gondola.tester
   displayName: 'Run all tests'
   workingDirectory: tests
+  env:
+    BROWSER: chrome
 
 
