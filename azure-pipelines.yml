@@ -9,13 +9,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-parameters:
-- name: browsers
-  displayName: Browsers
-  default: chrome
-  values:
-    - chrome
-    - firefox
+strategy:
+  matrix:
+    chrome:
+      browsers: chrome
+    firefox:
+      browsers: firefox
 
 
 # steps:
@@ -40,7 +39,7 @@ steps:
   displayName: 'Run all tests'
   workingDirectory: tests
   env:
-    BROWSER: ${{ parameters.browsers }}
+    BROWSER: $[ variables['browsers'] ]
     G_LS_TOKEN: $(g.ls.token)
 
 
