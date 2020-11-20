@@ -23,13 +23,12 @@ pool:
 
 steps:
 
-- script: cd tests
-  displayName: 'Move to tests folder'
-
 - script: docker-compose run --rm gondola.builder
   displayName: 'Build souce code & compile test project'
+  workingDirectory: tests
 
 - script: docker-compose run --rm gondola.tester
   displayName: 'Run all tests'
+  workingDirectory: tests
 
 
