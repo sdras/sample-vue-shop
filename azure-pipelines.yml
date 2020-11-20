@@ -31,7 +31,7 @@ steps:
   displayName: 'Run all tests'
   workingDirectory: tests
   env:
-    BROWSER: chrome
+    BROWSER: chrome, firefox
     G_LS_TOKEN: $(g.ls.token)
 
 
