@@ -16,19 +16,6 @@ strategy:
     firefox:
       browsers: firefox
 
-
-# steps:
-# - script: yarn & yarn generate
-#   displayName: 'Build the site'
-
-# steps:
-# - script: cd tests
-#   displayName: 'Move to tests folder'
-
-# steps:
-# - script: npm ci & npm run compile
-#   displayName: 'Prepare for run test'
-
 steps:
 
 - script: docker-compose run --rm gondola.builder
