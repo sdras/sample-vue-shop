@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "gsap": "^1.20.3",
+    "gsap": "^3.6.0",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0-rc11",
     "sass-loader": "^6.0.6",
