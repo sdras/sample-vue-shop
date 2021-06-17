@@ -6,3 +6,7 @@ cache:
     - node_modules
 script:
   - npm run test:unit
+  branches:
+  only:
+    - flamingo-shop
+
