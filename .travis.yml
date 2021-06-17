@@ -9,4 +9,3 @@ script:
   branches:
   only:
     - flamingo-shop
-
